@@ -2,25 +2,43 @@
   {
     "status": "Winner",
     "text":"Mobile app",
-    "img": "img/images1.jpeg",
+    "img": "img/02.png",
     "time": "2 days ago"
   },
   {
     "status": "Winner",
     "text":"E-commerce Planner",
-    "img": "img/images2.jpeg",
+    "img": "img/05.png",
     "time": "3 days ago"
   },
   {
     "status": "Winner",
     "text":"Logo Designer",
-    "img": "img/images3.jpeg",
+    "img": "img/03.png",
     "time": "3 days ago"
   },
   {
     "status": "Winner",
     "text":"Tester",
-    "img": "img/images4.jpeg",
+    "img": "img/07.png",
+    "time": "3 days ago"
+  },
+  {
+    "status": "Winner",
+    "text":"Tester",
+    "img": "img/04.png",
+    "time": "3 days ago"
+  },
+  {
+    "status": "Winner",
+    "text":"Tester",
+    "img": "img/09.png",
+    "time": "3 days ago"
+  },
+  {
+    "status": "Winner",
+    "text":"Tester",
+    "img": "img/08.png",
     "time": "3 days ago"
   }
 

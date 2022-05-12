@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/dashboard.dart';
+import 'package:portfolio/controllers/detailController.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -12,6 +14,24 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+
+    List images = [];
+
+  @override
+  void initState() {
+    _readData();
+    super.initState();
+
+  }
+
+  _readData() async {
+    await DefaultAssetBundle.of(context).loadString("json/popular.json").then((value) {
+      setState(() {
+        images = json.decode(value);
+      });
+    });
+  }
+  
   @override
   Widget build(BuildContext context) {
 
@@ -19,45 +39,55 @@ class _DetailPageState extends State<DetailPage> {
       double longueur = MediaQuery.of(context).size.height;
        int _currentIndex = 0;
 
+       final DetailController love = Get.put(DetailController());
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFFebf8fd),
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          }, 
+          icon: Icon(
+            Icons.home,
+            color: Colors.black,
+          )
+        ),
       ),
-      body: Container(
-       color: Color(0xFFebf8fd),
-       child: Stack(
-         children: [
-           Positioned(
-             top: 30,
-             left: 0,
-             height: 100,
-             child: Container(
-               width: largeur,
-               height: 100,
-               child: Container(
-                 margin: EdgeInsets.only(left: 25, right: 25),
-                 decoration: BoxDecoration(
-                   borderRadius: BorderRadius.circular(20),
-                   color: const Color(0xff629138),
-                 ),
-                 child: Container(
-                   padding: EdgeInsets.only(left: 20, right: 20),
-                   child: Row(
-                     children: [
-                       CircleAvatar(
-                         radius: 40,
-                         backgroundImage: AssetImage(
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              child: Container(
+                width: largeur,
+                height: 100,
+                child: Container(
+                  margin: EdgeInsets.only(left: 25, right: 25),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: const Color(0xff629138),
+                  ),
+                  child: Container(
+                    padding: EdgeInsets.only(left: 20, right: 20),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 40,
+                          backgroundImage: AssetImage(
                             "img/avatar.png",
-                         ),
-                       ),
-                       SizedBox(width: 10),
-                       Column(
-                         mainAxisAlignment: MainAxisAlignment.center,
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Text(
-                             Get.arguments["category"],
-                              style: const TextStyle(
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "....",
+                              style: TextStyle(
                                 color: Color(0xFFfcfffe),
                                 fontSize: 15,
                                 decoration: TextDecoration.none,
@@ -65,15 +95,15 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                             SizedBox(height: 5),
                             Text(
-                             "titre",
-                              style: const TextStyle(
+                              "titre",
+                              style: TextStyle(
                                 color: Color(0xFFfcfffe),
                                 fontSize: 12,
                                 decoration: TextDecoration.none,
                               ),
                             ),
-                         ],
-                       ),
+                          ],
+                        ),
                       Expanded(child: Container()),
                       Container(
                         width: 60,
@@ -90,32 +120,76 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                         ),
                       ),
-                     ],
-                   ),
-                 ),
-               ),
-             )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ),
-            Positioned(
-              top: 320,
-              left: 0,
-              width: largeur,
-              height: longueur,
-              child: Container(
-                width: 80,
-                height: 200,
-                color: Color(0xFFfcfffe),
-              )
-            ),
-            Positioned(
-              top: 200,
-              left: 0,
-              width: largeur,
-              height: 300,
+
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5),
               child: Container(
                 margin: EdgeInsets.only(left: 25, right: 25),
                 width: largeur,
-                height: 250,
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.blue.shade100,
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 20,
+                      spreadRadius: 1,
+                      offset: Offset(0, 10),
+                      color: Colors.grey.withOpacity(0.2)
+                    ),
+                  ],
+                ),
+                child: Container(
+                  margin: EdgeInsets.only(left: 20, right: 20),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Preparation audio",
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Expanded(child: Container()),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      Container(
+                        width: largeur,
+                        child: Text(
+                          "",
+                          style: TextStyle(
+                            color: Color(0xFFfcfffe),
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                      Divider(thickness: 1),
+
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              child: Container(
+                margin: EdgeInsets.only(left: 25, right: 25),
+                width: largeur,
+                height: 300,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: const Color(0xff629138),
@@ -184,7 +258,7 @@ class _DetailPageState extends State<DetailPage> {
                                       fontSize: 12,
                                     ),
                                   ),
-                                   Text(
+                                    Text(
                                     "days",
                                     style: const TextStyle(
                                       color: Color(0xFFfcfffe),
@@ -215,7 +289,7 @@ class _DetailPageState extends State<DetailPage> {
                                       fontSize: 12,
                                     ),
                                   ),
-                                   Text(
+                                    Text(
                                     "Fcfa",
                                     style: const TextStyle(
                                       color: Color(0xFFfcfffe),
@@ -231,18 +305,17 @@ class _DetailPageState extends State<DetailPage> {
                     ],
                   ),
                 ),
-              )
+              ),
             ),
-            Positioned(
-              top: 520,
-              left: 25,
-              height: 50,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
               child: Container(
                 width: largeur,
+                height: 20,
                 child:
                   RichText(
                     text: TextSpan(
-                      text: "Total",
+                      text: "Ingrédients",
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 15,
@@ -251,10 +324,10 @@ class _DetailPageState extends State<DetailPage> {
                       
                       children: [
                         TextSpan(
-                          text: " ",
+                          text: " : ",
                         ),
                         TextSpan(
-                          text: "(00)",
+                          text: images.length.toString(),
                           style: TextStyle(
                             color: Colors.amber.shade600,
                           )
@@ -264,61 +337,93 @@ class _DetailPageState extends State<DetailPage> {
                     
                   ),
                 
-              )
+              ),
             ),
-            Stack(
-              children: [
-                for(int i = 0; i< 5; i++)
-                Positioned(
-                  top: 550,
-                  left: (25 + i * 55).toDouble(),
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "img/02.png",
-                        ),
-                        fit: BoxFit.cover
-                      )
-                    ),
-                  )
-                )
-              ],
-            ),
-            Positioned(
-              top: 670,
-              left: 25,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Row(
                 children: [
+                  for(int i = 0; i<images.length; i++)
                   Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.orange,
-                    ),
-                    child: Icon(
-                      Icons.favorite_border,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    "Ajouter aux Favoris",
-                    style: const TextStyle(
-                      color: Colors.orange,
-                      fontSize: 15,
+                    width: 50,
+                    height: 50,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                          image: AssetImage(
+                              images[i]["img"]
+                          ),
+                          fit: BoxFit.cover,
+                        )
+                      ),
                     ),
                   )
                 ],
-              )
+              ),
             )
-         ],
-       ),
+          ],
+        
+        ),
+
       ),
+            bottomNavigationBar: BottomAppBar(
+                notchMargin: 0,
+                child: Container(
+                height: 50,
+                width: 80,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade100,
+                    borderRadius: BorderRadius.circular(25),
+                    border: Border.all(
+                      color: Colors.white
+                    )
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                         
+                        },
+                        child: Container(
+                          width: 30,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.orange,
+                          ),
+                          child: IconButton(
+                            onPressed: () {
+                              love.loveCounter();
+                              // print("i love foods");
+                            }, 
+                            icon: Icon(
+                              Icons.favorite_border,
+                              color: Colors.white,
+                              size: 10,
+                            ),
+                          ),
+                        ),
+                      ),
+                      FittedBox(
+                          fit: BoxFit.scaleDown,
+                        child: Text(
+                          "Ajouter aux favoris",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    
+                    ],
+                  ),
+                ),
+              ),     
     );
-  }    
+  }
 }

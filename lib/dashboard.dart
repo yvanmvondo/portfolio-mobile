@@ -177,7 +177,7 @@ class _DashboardState extends State<Dashboard> {
                       Get.toNamed(
                         "/detail",
                         arguments: {
-                          "category": populaire[i]["category"].toString(),
+                          "cat": populaire[i]["category"].toString(),
                         }
                       );
                     },
@@ -254,7 +254,7 @@ class _DashboardState extends State<Dashboard> {
             child: Row(
               children: [
                 Text(
-                  "Recèttes récentes",
+                  "Recettes récentes",
                    style: TextStyle(
                     color: Color(0xFF1f2326),
                     fontSize: 12,
@@ -316,7 +316,7 @@ class _DashboardState extends State<Dashboard> {
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                         child: Row(
-                         
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             CircleAvatar(
                               radius: 20,
@@ -324,7 +324,6 @@ class _DashboardState extends State<Dashboard> {
                                  recent[i]["img"],
                               ),
                             ),
-                            SizedBox(width: 5),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,

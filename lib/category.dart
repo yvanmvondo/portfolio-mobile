@@ -36,7 +36,17 @@ class _CategoryPageState extends State<CategoryPage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFFebf8fd),
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          }, 
+          icon: Icon(
+            Icons.home,
+            color: Colors.black,
+          )
+        ),
       ),
       backgroundColor: Colors.grey,
       body: Container(
