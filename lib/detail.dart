@@ -20,23 +20,15 @@ class _DetailPageState extends State<DetailPage> {
        int _currentIndex = 0;
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: Container(
        color: Color(0xFFebf8fd),
        child: Stack(
          children: [
            Positioned(
-             top: 50,
-             left: 10,
-             child: IconButton(
-               onPressed: () {}, 
-               icon: Icon(
-                 Icons.arrow_back,
-                 color: Colors.black,
-                )
-              ),
-           ),
-           Positioned(
-             top: 120,
+             top: 30,
              left: 0,
              height: 100,
              child: Container(
@@ -64,7 +56,7 @@ class _DetailPageState extends State<DetailPage> {
                          crossAxisAlignment: CrossAxisAlignment.start,
                          children: [
                            Text(
-                             "data",
+                             Get.arguments["category"],
                               style: const TextStyle(
                                 color: Color(0xFFfcfffe),
                                 fontSize: 15,
@@ -73,7 +65,7 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                             SizedBox(height: 5),
                             Text(
-                             "data",
+                             "titre",
                               style: const TextStyle(
                                 color: Color(0xFFfcfffe),
                                 fontSize: 12,
@@ -116,10 +108,10 @@ class _DetailPageState extends State<DetailPage> {
               )
             ),
             Positioned(
-              top: 250,
+              top: 200,
               left: 0,
               width: largeur,
-              height: 250,
+              height: 300,
               child: Container(
                 margin: EdgeInsets.only(left: 25, right: 25),
                 width: largeur,
@@ -145,7 +137,7 @@ class _DetailPageState extends State<DetailPage> {
                         child: Row(
                           children: [
                             Text(
-                              "data",
+                              "description",
                               style: const TextStyle(
                                 color: Color(0xFFfcfffe),
                                 fontSize: 20,
@@ -156,11 +148,11 @@ class _DetailPageState extends State<DetailPage> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 20,),
+                      SizedBox(height: 10,),
                       Container(
                         width: largeur,
                         child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  .",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                           style: TextStyle(
                             color: Color(0xFFfcfffe),
                             fontSize: 12,
@@ -186,14 +178,14 @@ class _DetailPageState extends State<DetailPage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "000",
+                                    "00",
                                     style: const TextStyle(
                                       color: Color(0xFFfcfffe),
                                       fontSize: 12,
                                     ),
                                   ),
                                    Text(
-                                    "Fcfa",
+                                    "days",
                                     style: const TextStyle(
                                       color: Color(0xFFfcfffe),
                                       fontSize: 12,

@@ -1,9 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/category.dart';
 import 'package:portfolio/dashboard.dart';
 //import 'package:portfolio/detail.dart';
 import 'package:portfolio/dashboard.dart';
+import 'package:portfolio/detail.dart';
+import 'package:portfolio/home.dart';
 //import 'package:portfolio/home.dart';
 
 void main() {
@@ -23,7 +26,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "/",
       getPages: [
-        GetPage(name: "/", page: ()=>const Dashboard())
+        GetPage(name: "/", page: ()=>const HomePage()),
+        GetPage(name: "/dash", page: ()=>const Dashboard()),
+        GetPage(name: "/detail", page: ()=>const DetailPage()),
+        GetPage(name: "/category", page: ()=>const CategoryPage() )
       ],
     );
   }
