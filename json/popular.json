@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Sauce de feuilles de manioc",
+      "title": "Boissons",
+      "description":"La sauce feuilles de manioc que je vais vous présenter tout de suite est l’une de mes préférées parmi les sauces les plus connues d’Afrique.",
+      "img": "img/05.png",
+      "time": "21 July",
+      "prize": "200"
+    },
+    {
+      "name": "Folong aux arachides",
+      "title": "Entrées",
+      "description":"Le folong est une sorte d'epinard sauvage très consommé au Cameroun et en Afrique en général. Il se cuisine facilement et s'associe à presque tout.",
+      "img": "img/01.png",
+      "time": "12 August",
+      "prize": "300"
+  
+    },
+    {
+      "name": "Ekomba, gâteau de maïs",
+      "title": "Sorties",
+      "description":"L'ekomba est un mets originaire des provinces du Centre et du Sud Cameroun. C'est un gâteau à base de pâte de maïs frais ou sec.",
+      "img": "img/02.png",
+      "time": "01 Sept",
+      "prize": "240"
+  
+    },
+    {
+      "name": "Poisson sauce arachides",
+      "title": "Fruits et Légumes",
+      "description":"Pour vous permettre de vous évader au Cameroun au sein de votre cuisine, vous pourrez confectionner une sauce d'arachide au poisson.",
+      "img": "img/03.png",
+      "time": "20 Jan",
+      "prize": "399"
+    },
+    {
+    "name": "koki ou gâteau de haricots",
+    "title": "Plats de Resistance",
+    "description":"Le Koki est une préparation épicée à base de haricots et d'huile de palme, cuite à la vapeur dans une feuille de bananier fermée.",
+    "img": "img/04.png",
+    "time": "20 Jan",
+    "prize": "399"
+    }
+  ]
