@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DetailController extends GetxController {
@@ -5,10 +6,20 @@ class DetailController extends GetxController {
 
   void loveCounter() {
     if(love.value == 1) {
-      Get.snackbar("J'aime", "Vous aimez deja");
+      Get.snackbar(
+        "Favorie", 
+        "Vous aimez deja",
+        icon: const Icon(Icons.alarm),
+        shouldIconPulse: true,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.orange.shade300
+      );
     } else {
       love.value++;
-      Get.snackbar("J'aime", "Vous adorez");
+      Get.snackbar(
+        "Favorie",
+        "Vous adorez",
+      );
     }
   }
 } 

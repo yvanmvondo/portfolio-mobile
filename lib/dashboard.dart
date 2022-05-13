@@ -167,17 +167,22 @@ class _DashboardState extends State<Dashboard> {
           ),
           SizedBox(height: 20),
           Container(  
-            height: 200,
+            height: 250,
             child: PageView.builder(
               controller: PageController(viewportFraction: 0.90),
-              itemCount: populaire.length,
+              // ignore: unnecessary_null_comparison
+              itemCount: populaire == null ? 0 : populaire.length,
               itemBuilder: (_, i) {
                 return GestureDetector(
                   onTap: () {
                       Get.toNamed(
                         "/detail",
                         arguments: {
-                          "cat": populaire[i]["category"].toString(),
+                          "description": populaire[i]["description"].toString(),
+                          "name": populaire[i]["name"].toString(),
+                          "time": populaire[i]["time"].toString(),
+                          "prize": populaire[i]["price"].toString(),
+                          "audio": populaire[i]["audio"].toString(),
                         }
                       );
                     },
@@ -198,10 +203,12 @@ class _DashboardState extends State<Dashboard> {
                             children: [
                               Text(
                                 populaire[i]["name"],
+                                textAlign: TextAlign.start,
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w600,
+                                  
                                 ),
                               ),
                               Expanded(child: Container(),)
@@ -329,7 +336,8 @@ class _DashboardState extends State<Dashboard> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  recent[i]["text"],
+                                  recent[i]["name"],
+                                  textAlign: TextAlign.start,
                                   style: TextStyle(
                                    color: Colors.white,
                                     fontSize: 12,
@@ -341,6 +349,7 @@ class _DashboardState extends State<Dashboard> {
                                   width: 170,
                                   child: Text(
                                    recent[i]["category"],
+                                   textAlign: TextAlign.start,
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 15,

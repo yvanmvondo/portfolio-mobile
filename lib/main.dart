@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/", page: ()=>const HomePage()),
         GetPage(name: "/dash", page: ()=>const Dashboard()),
         GetPage(name: "/detail", page: ()=>const DetailPage()),
-        GetPage(name: "/category", page: ()=>const CategoryPage() )
+        GetPage(name: "/category", page: ()=>const CategoryPage(), transition: Transition.zoom   )
       ],
     );
   }

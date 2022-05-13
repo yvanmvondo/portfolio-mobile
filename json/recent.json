@@ -1,23 +1,24 @@
 [
   {
     "category": "Plats traditionnels",
-    "text":"Kelen kelen",
+    "name":"Kelen kelen",
     "img": "img/09.png",
-    "description":"Le Gombo est l’un des légumes préférés des africains. Cette plante donne aussi des feuilles comestibles et largement consommées en Afrique. Au Cameroun on les appelle kelen-kelen ou tee'e (Beti). Cette recette associe les feuilles de gombo aux feuilles de manioc pour réaliser un plat complet, simple et riche en légumes.",
+    "description":"Le Gombo est l’un des légumes préférés des africains. Cette plante donne aussi des feuilles comestibles et largement consommées en Afrique. Au Cameroun on les appelle kelen-kelen ou tee'e (Beti).",
     "time": "2 days ago",
     "price": "3500"
   },
   {
     "category": "Plats traditionnels",
-    "text":"Maquereau nfiang ndo'o",
+    "name":"Maquereau nfiang ndo'o",
     "img": "img/01.png",
     "description":"Le maquereau nfiang ndo'o est un maquereau accompagné de la fameuse sauce aux noyaux de mangues sauvage, une sauce onctueuse qui ravira vos papilles et se marie très bien avec ce poisson.",
     "time": "2 days ago",
-    "price": "3500"
+    "price": "3500",
+    "audio": "Position Music.mp3"
   },
   {
     "category": "Classiques",
-    "text":"Poulet aux arachides et lait de coco",
+    "name":"Poulet aux arachides et lait de coco",
     "img": "img/04.png",
     "description":"Quelle que soit la façon de la préparer, cette recette de poulet aux arachides et lait de coco est tout à fait sublime. Le lait de coco et la pâte d’arachides s’unissent pour le meilleur! À servir avec du riz.",
     "time": "3 days ago",
@@ -25,7 +26,7 @@
   },
   {
     "category": "Classiques",
-    "text":"Beignets de koki ou haricots blancs",
+    "name":"Beignets de koki ou haricots blancs",
     "img": "img/07.png",
     "description":"Les haricots blancs, appelés koki au Cameroun (black eyed peas en anglais ou encore cornille ont un goût légèrement sucré qui en fait l'ingrédient idéal pour ces beignets originaux.",
     "time": "3 days ago",
@@ -33,7 +34,7 @@
   },
   {
     "category": "Boissons",
-    "text":"Bissac ou jus de foléré",
+    "name":"Bissac ou jus de foléré",
     "img": "img/03.png",
     "description":"Le Foléré est une boisson très prisée, il est entré petit à petit dans les mœurs des Africains, car il est classé parmi les boissons assez naturelles. Le jus de foléré est une recette traditionnelle du Cameroun.",
     "time": "4 days ago",
@@ -41,7 +42,7 @@
   },
   {
     "category": "Epices",
-    "text":"Pèbè ou fausse noix de muscade",
+    "name":"Pèbè ou fausse noix de muscade",
     "img": "img/05.png",
     "description":"Le pèbè, appelé également medjock ou mendak en Bamiléké, hikoma en Bassa et nding en Beti, est une graine que l'on trouve dans le fruit de l'arbre du même nom. Ce fruit de forme sphérique pouvant atteindre 15cm de diamètre cache, noyées dans une pulpe blanche, de nombreuses graines de forme oblongue légèrement comprimées de couleur brun clair à saveur piquante et odeur aromatique et stimulante.",
     "time": "3 days ago",
@@ -49,7 +50,7 @@
   },
   {
     "category": "Epices",
-    "text":"Le Mbongo ou maniguette",
+    "name":"Le Mbongo ou maniguette",
     "img": "img/06.png",
     "description":"La maniguette est une plante originaire d’Afrique au feuillage odorant, dont les graines sont aromatisées. Ses feuilles sont longues, vertes, persistantes et très odorantes. Le fruit de la maniguette est une gousse brune en forme d’échalote sortant du pied de la plante et contenant de nombreuses petites graines marron.",
     "time": "3 days ago",
@@ -57,7 +58,7 @@
   },
   {
     "category": "Boissons",
-    "text":"jus de corossol",
+    "name":"jus de corossol",
     "img": "img/03.png",
     "description":"La chair du corossol est comestible et a un goût à la fois sucré et acidulé. Cela en fait un fruit exploité dans l'agro-alimentaire pour la confection de glaces. Son goût évoque pour certains celui des chewing-gums Malabar, et de manière plus concrète, une approche du litchee par son gout fleuri, délicat, frais, exotique et persistant.",
     "time": "4 days ago",
@@ -65,7 +66,7 @@
   },
   {
     "category": "Compléments",
-    "text":"Plantains frits aux épices",
+    "name":"Plantains frits aux épices",
     "img": "img/02.png",
     "description":"Une façon simple et délicieuse de préparer les plantains, appréciée de tous.",
     "time": "4 days ago",
@@ -73,7 +74,7 @@
   },
   {
     "category": "Compléments",
-    "text":"Water fufu",
+    "name":"Water fufu",
     "img": "img/08.png",
     "description":"C'est la pulpe obtenue après trempage, elle est à la base de la préparation du miondo, du bobolo et du mintoumba. Cette pâte fraîche finement écrasée permet de faire un autre type de fufu : le water fufu au goût plus acidulé et d'une blancheur étonnante.",
     "time": "4 days ago",

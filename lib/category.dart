@@ -62,7 +62,7 @@ class _CategoryPageState extends State<CategoryPage> {
                       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       child: Container(
                         padding: EdgeInsets.only(left: 20, right: 20),
-                        height: 200,
+                        height: 250,
                         width: largeur-20,
                         margin: EdgeInsets.only(right: 10),
                         decoration: BoxDecoration(
@@ -77,6 +77,7 @@ class _CategoryPageState extends State<CategoryPage> {
                                 children: [
                                   Text(
                                     populaire[i]["name"],
+                                    textAlign: TextAlign.start,
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,

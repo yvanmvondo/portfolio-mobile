@@ -1,10 +1,12 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'dart:convert';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controllers/detailController.dart';
+import 'package:portfolio/utils/audioFile.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -14,6 +16,7 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  late AudioPlayer advancedPlayer;
 
     List images = [];
 
@@ -21,6 +24,7 @@ class _DetailPageState extends State<DetailPage> {
   void initState() {
     _readData();
     super.initState();
+    advancedPlayer = AudioPlayer();
 
   }
 
@@ -132,10 +136,10 @@ class _DetailPageState extends State<DetailPage> {
               child: Container(
                 margin: EdgeInsets.only(left: 25, right: 25),
                 width: largeur,
-                height: 100,
+                height: 400,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.blue.shade100,
+                  color: Color(0xff629138),
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 20,
@@ -148,92 +152,46 @@ class _DetailPageState extends State<DetailPage> {
                 child: Container(
                   margin: EdgeInsets.only(left: 20, right: 20),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         padding: EdgeInsets.symmetric(vertical: 15),
-                        child: Row(
+                        child: Column(
                           children: [
                             Text(
-                              "Preparation audio",
-                              textAlign: TextAlign.center,
+                              "Preparation",
                               style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            Expanded(child: Container()),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 10,),
-                      Container(
-                        width: largeur,
-                        child: Text(
-                          "",
-                          style: TextStyle(
-                            color: Color(0xFFfcfffe),
-                            fontSize: 12,
-                          ),
-                        ),
-                      ),
-                      Divider(thickness: 1),
-
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5),
-              child: Container(
-                margin: EdgeInsets.only(left: 25, right: 25),
-                width: largeur,
-                height: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color(0xff629138),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 20,
-                      spreadRadius: 1,
-                      offset: Offset(0, 10),
-                      color: Colors.grey.withOpacity(0.2)
-                    ),
-                  ],
-                ),
-                child: Container(
-                  margin: EdgeInsets.only(left: 20, right: 20),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 15),
-                        child: Row(
-                          children: [
                             Text(
-                              "description",
+                              "5 min",
                               style: const TextStyle(
-                                color: Color(0xFFfcfffe),
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                                fontSize: 10,
                               ),
                             ),
-                            Expanded(child: Container()),
                           ],
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: 5),
+                      AudioFile(advancedPlayer: advancedPlayer, ),
+                      SizedBox(height: 10),
+                      Divider(thickness: 1.0),
+                      SizedBox(height: 5),
                       Container(
                         width: largeur,
                         child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                          style: TextStyle(
+                        Get.arguments['description'],                          
+                        style: TextStyle(
                             color: Color(0xFFfcfffe),
                             fontSize: 12,
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 5),
                       Divider(thickness: 1.0),
                       SizedBox(height: 10),
                       Row(
@@ -252,14 +210,14 @@ class _DetailPageState extends State<DetailPage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "00",
+                                     Get.arguments['time'],     
                                     style: const TextStyle(
                                       color: Color(0xFFfcfffe),
                                       fontSize: 12,
                                     ),
                                   ),
                                     Text(
-                                    "days",
+                                    "2022",
                                     style: const TextStyle(
                                       color: Color(0xFFfcfffe),
                                       fontSize: 12,
@@ -283,7 +241,7 @@ class _DetailPageState extends State<DetailPage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "000",
+                                     Get.arguments['prize'],     
                                     style: const TextStyle(
                                       color: Color(0xFFfcfffe),
                                       fontSize: 12,
@@ -301,7 +259,7 @@ class _DetailPageState extends State<DetailPage> {
                             ],
                           )
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),

@@ -1,44 +1,48 @@
 [
-    {
-      "name": "Sauce de feuilles de manioc",
-      "title": "Boissons",
-      "description":"La sauce feuilles de manioc que je vais vous présenter tout de suite est l’une de mes préférées parmi les sauces les plus connues d’Afrique.",
-      "img": "img/05.png",
-      "time": "21 July",
-      "prize": "200"
-    },
-    {
-      "name": "Folong aux arachides",
-      "title": "Entrées",
-      "description":"Le folong est une sorte d'epinard sauvage très consommé au Cameroun et en Afrique en général. Il se cuisine facilement et s'associe à presque tout.",
-      "img": "img/01.png",
-      "time": "12 August",
-      "prize": "300"
-  
-    },
-    {
-      "name": "Ekomba, gâteau de maïs",
-      "title": "Sorties",
-      "description":"L'ekomba est un mets originaire des provinces du Centre et du Sud Cameroun. C'est un gâteau à base de pâte de maïs frais ou sec.",
-      "img": "img/02.png",
-      "time": "01 Sept",
-      "prize": "240"
-  
-    },
-    {
-      "name": "Poisson sauce arachides",
-      "title": "Fruits et Légumes",
-      "description":"Pour vous permettre de vous évader au Cameroun au sein de votre cuisine, vous pourrez confectionner une sauce d'arachide au poisson.",
-      "img": "img/03.png",
-      "time": "20 Jan",
-      "prize": "399"
-    },
-    {
-    "name": "koki ou gâteau de haricots",
-    "title": "Plats de Resistance",
-    "description":"Le Koki est une préparation épicée à base de haricots et d'huile de palme, cuite à la vapeur dans une feuille de bananier fermée.",
+  {
+    "category": "Plats traditionnels",
+    "name":"Kelen kelen",
+    "img": "img/09.png",
+    "description":"Le Gombo est l’un des légumes préférés des africains. Cette plante donne aussi des feuilles comestibles et largement consommées en Afrique. Au Cameroun on les appelle kelen-kelen ou tee'e (Beti).",
+    "time": "2 days ago",
+    "price": "3500",
+    "audio": "audio/love_me.mp3"
+  },
+  {
+    "category": "Plats traditionnels",
+    "name":"Maquereau nfiang ndo'o",
+    "img": "img/01.png",
+    "description":"Le maquereau nfiang ndo'o est un maquereau accompagné de la fameuse sauce aux noyaux de mangues sauvage, une sauce onctueuse qui ravira vos papilles et se marie très bien avec ce poisson.",
+    "time": "2 days ago",
+    "price": "3500",
+    "audio": "audio/love_me.mp3"
+  },
+  {
+    "category": "Classiques",
+    "name":"Poulet aux arachides et lait",
     "img": "img/04.png",
-    "time": "20 Jan",
-    "prize": "399"
-    }
-  ]
+    "description":"Quelle que soit la façon de la préparer, cette recette de poulet aux arachides et lait de coco est tout à fait sublime. Le lait de coco et la pâte d’arachides s’unissent pour le meilleur! À servir avec du riz.",
+    "time": "3 days ago",
+    "price": "4000",
+    "audio": "audio/company.mp3"
+  },
+  {
+    "category": "Classiques",
+    "name":"Beignets de koki s",
+    "img": "img/07.png",
+    "description":"Les haricots blancs, appelés koki au Cameroun (black eyed peas en anglais ou encore cornille ont un goût légèrement sucré qui en fait l'ingrédient idéal pour ces beignets originaux.",
+    "time": "3 days ago",
+    "price": "4000",
+    "audio": "audio/epic.mp3"
+  },
+  {
+    "category": "Boissons",
+    "name":"Bissac ou jus de foléré",
+    "img": "img/03.png",
+    "description":"Le Foléré est une boisson très prisée, il est entré petit à petit dans les mœurs des Africains, car il est classé parmi les boissons assez naturelles. Le jus de foléré est une recette traditionnelle du Cameroun.",
+    "time": "4 days ago",
+    "price": "1000",
+    "audio": "audio/company.mp3"
+  }
+
+]
