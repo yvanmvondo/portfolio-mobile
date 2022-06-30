@@ -137,7 +137,7 @@ class _DashboardState extends State<Dashboard> {
                 Text(
                   "Toutes",
                    style: TextStyle(
-                    color: Color(0xFF1f2326),
+                    color: Color.fromARGB(192, 31, 35, 38),
                     fontSize: 12,
                     decoration: TextDecoration.none,
                   ),

@@ -192,9 +192,9 @@ class _AudioFileState extends State<AudioFile> {
               ],
             ),
           ),
-          SizedBox(height: 10,),
-          slider(),
-          SizedBox(height: 5,),
+          // SizedBox(height: 10,),
+          // slider(),
+          // SizedBox(height: 5,),
           loadAsset()
         ],
       ),
